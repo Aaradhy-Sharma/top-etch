@@ -36,3 +36,9 @@ sliderValue.textContent = slider.value;
 slider.addEventListener('input',(e) =>{
         sliderValue.textContent = `${e.target.value} x ${e.target.value}`;
     })
+
+let sketchBoard = document.getElementById('sketch-board');
+sketchBoard.addEventListener('mousedown', () => isDrawing = true);
+sketchBoard.addEventListener('mouseup', () => isDrawing = false);
+sketchBoard.addEventListener('touchstart', () => isDrawing = true);
+sketchBoard.addEventListener('touchend', () => isDrawing = false);
