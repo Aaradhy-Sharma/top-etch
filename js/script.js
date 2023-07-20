@@ -16,6 +16,7 @@ function createGrid(sizeVar) {
         square.classList.add('square');
         sketchBoard.insertAdjacentElement('beforeend', square);
         square.addEventListener('mouseover', draw);
+        square.addEventListener('touchmove', draw);
     }
 }
 
