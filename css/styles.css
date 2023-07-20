@@ -26,6 +26,7 @@ header{
     background-color: rgba(240, 248, 255, 0.218);
     border: none;
     border-radius: 50px;
+    margin-top: 4px;
 }
 
 nav{
@@ -52,6 +53,7 @@ nav{
 
 }
 
+
 .navList li a{
     transition: all 0.3s ease 0s;
     text-decoration: none;
@@ -62,6 +64,7 @@ nav{
 
 .navList li a:hover{
     color: #0088a9;
+    animation: navLink 0.22s ease forwards;
 }
 
 .navButton{
@@ -77,5 +80,10 @@ nav{
 .navButton:hover{
     background-color: rgba(240, 248, 255, 0.8);
     color: #0088a9;
+}
 
+@keyframes navLink {
+    100%{
+        font-size: larger;
+    }
 }
