@@ -15,7 +15,6 @@
     <meta name="og:site_name" content="Etch-A-Sketch Game">
     <title>Etch-A-Sketch Game</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/script.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -29,9 +28,24 @@
         <a href="#" class="cta"><button class="navButton">Contact</button></a>
     </header>
     <main>
+        <h1 class="gameHeading">Etch-a-Sketch</h1>
+        <div class="container gridbox">
+            <div class="container gridContainer">
+                <div class="grid" id="sketch-board">
+                </div>
+            </div>
+        <div class="container menubox">
+            <div class="menu">
+                <label for="slider" class="sliderLabel">Grid Size</label>
+                <input type="range" min="2" max="64" value="16" class="slider" id="slider" onchange="createGrid(this.value)">   
+                <span id="sliderValue">16x16</span>             
+                <button class="resetButton" onclick="clearGrid()">Reset</button>
+            </div>
+        </div>
     </main>
     <footer>
         
     </footer>
+    <script src="js/script.js" defer></script>
 </body>
 </html>
