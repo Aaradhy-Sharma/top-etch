@@ -87,3 +87,58 @@ nav{
         font-size: larger;
     }
 }
+
+.gameHeading{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: #ecf0f1;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.gameHeading:hover{
+    transform: scale(1.1);
+    animation: gameHeadingAnimation 1s ease alternate-reverse infinite;
+
+}
+
+@keyframes gameHeadingAnimation {
+    50%{
+        transform: rotate(5deg);
+    }
+    100%{
+        transform: rotate(-5deg);
+    }
+}
+
+.grid{
+    background-color: white;
+    height: 500px;
+    width: 500px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid red;
+    display: grid;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    border-collapse: collapse;
+}
+
+.square{
+    border: 0.1px solid black;
+}
+
+.menu{
+    margin: 100px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.resetButton{
+    margin: 1px auto;
+}
