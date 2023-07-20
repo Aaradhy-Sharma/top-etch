@@ -36,10 +36,12 @@
             </div>
         <div class="container menubox">
             <div class="menu">
-                <label for="slider" class="sliderLabel">Grid Size</label>
-                <input type="range" min="2" max="64" value="16" class="slider" id="slider" onchange="createGrid(this.value)">   
-                <span id="sliderValue">16x16</span>             
-                <button class="resetButton" onclick="clearGrid()">Reset</button>
+                <div class="sliderBox">
+                    <label for="slider" class="sliderLabel">Grid Size</label>
+                    <input type="range" min="2" max="64" value="16" class="slider" id="slider" onchange="createGrid(this.value)">   
+                    <span id="sliderValue">16x16</span>   
+                </div> 
+                    <button class="resetButton" onclick="clearGrid()">Reset</button>
             </div>
         </div>
     </main>
