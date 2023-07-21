@@ -2,6 +2,7 @@ let color = 'black';
 let rainbowModeOn = false;
 let shadingOn = false;
 let defaultDrawing = true; 
+let eraseOn = false;
 
 function draw(e) {
   if (defaultDrawing) { 
@@ -13,23 +14,9 @@ function changeColor(e) {
   color = e.target.value;
 }
 
-function eraseGrid() {
-    color = 'white';
-    defaultDrawing = true; 
-    rainbowModeOn = false;
-    shadingOn = false;
-    let square = document.querySelector('.square');
-    square.style.backgroundColor = 'white';
-    square.style.opacity = 1;
-    let eraseBtn = document.querySelector('#eraseBtn');
-    eraseBtn.classList.toggle('activeBtn');
-}
-
-  
-
 let outline = true;
 
-function toggleOutline(e) {
+function toggleOutline() {
   let squares = document.querySelectorAll('.square');
   outline = !outline;
   if (outline) {
@@ -37,6 +24,9 @@ function toggleOutline(e) {
   } else {
     squares.forEach((square) => square.classList.remove('outline'));
   }
+    let outlineBtn = document.querySelector('#toggleBtn');
+    outlineBtn.classList.toggle('activeBtn');
+
 }
 
 function rainbowMode() {
@@ -49,13 +39,17 @@ function rainbowMode() {
     rainbowBtn.classList.toggle('activeBtn');
 }
 
-function toggleShading(e) {
+function toggleShading() {
   shadingOn = !shadingOn;
   defaultDrawing = false; 
     if (!shadingOn) {
         defaultDrawing = true; 
     }
-    e.target.classList.toggle('activeBtn');
+    let shadingBtn = document.querySelector('#toggleShading');
+    shadingBtn.classList.toggle('activeBtn');
+
+    let currentColor = document.querySelector('#color-picker');
+    color = currentColor.value;
 }
 
 function handleMouseover(e) {
@@ -123,3 +117,37 @@ sketchBoard.addEventListener('mouseup', () => isDrawing = false);
 sketchBoard.addEventListener('touchstart', () => isDrawing = true);
 sketchBoard.addEventListener('touchend', () => isDrawing = false);
 
+
+
+
+function eraseMode() {
+    eraseOn = !eraseOn;
+    if (eraseOn) {
+      defaultDrawing = false;
+      rainbowModeOn = false;
+      shadingOn = false;
+      let eraseBtn = document.querySelector('#eraseBtn');
+      eraseBtn.classList.add('activeBtn');
+    } else {
+      defaultDrawing = true;
+      let eraseBtn = document.querySelector('#eraseBtn');
+      eraseBtn.classList.remove('activeBtn');
+      let currentColor = document.querySelector('#color-picker');
+        color = currentColor.value;
+
+    }
+  }
+  
+  function eraseGrid() {
+    if (eraseOn) {
+      color = 'white';
+      defaultDrawing = true; 
+      rainbowModeOn = false;
+      shadingOn = false;
+      let square = document.querySelector('.square');
+      square.style.backgroundColor = 'white';
+      square.style.opacity = 1;
+      let eraseBtn = document.querySelector('#eraseBtn');
+      eraseBtn.classList.add('activeBtn');
+    }
+  }
