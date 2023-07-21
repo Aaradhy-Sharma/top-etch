@@ -13,6 +13,20 @@ function eraseGrid(e){
     color = 'white';
 }
 
+let outline = true;
+
+function toggleOutline(e){
+    let squares = document.querySelectorAll('.square');
+    outline = !outline;
+    if(outline){
+        squares.forEach(square => square.classList.add('outline'));
+    }else{
+        squares.forEach(square => square.classList.remove('outline'));
+    }
+    
+}
+
+
 
 function createGrid(sizeVar) {
     let sketchBoard = document.querySelector('#sketch-board');
@@ -24,6 +38,7 @@ function createGrid(sizeVar) {
     for (let i = 0; i < sizeVar * sizeVar; i++) {
         let square = document.createElement('div');
         square.classList.add('square');
+        square.classList.add('outline');
         sketchBoard.insertAdjacentElement('beforeend', square);
         square.addEventListener('mouseover', draw);
         square.addEventListener('touchmove', draw);

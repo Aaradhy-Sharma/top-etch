@@ -126,7 +126,7 @@ nav{
     border-collapse: collapse;
 }
 
-.square{
+.outline{
     border: 0.1px solid black;
 }
 
@@ -199,6 +199,22 @@ nav{
 }
 
 .eraseButton:hover{
+    background-color: rgba(240, 248, 255, 0.8);
+    color: #0088a9;
+}
+
+.toggleButton{
+    margin: 1px auto;
+    padding: 10px 20px;
+    background-color: rgba(240, 248, 255, 0);
+    border: 1px solid #ecf0f1;
+    border-radius: 50px;
+    cursor: pointer;
+    color: #ecf0f1;
+    transition: all 0.3s ease 0s;    
+}
+
+.toggleButton:hover{
     background-color: rgba(240, 248, 255, 0.8);
     color: #0088a9;
 }
