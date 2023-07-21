@@ -1,10 +1,10 @@
 let color = 'black';
 let rainbowModeOn = false;
 let shadingOn = false;
-let defaultDrawing = true; // New variable for default drawing
+let defaultDrawing = true; 
 
 function draw(e) {
-  if (defaultDrawing) { // Check if default drawing mode is active
+  if (defaultDrawing) { 
     e.target.style.backgroundColor = color;
   }
 }
@@ -15,12 +15,14 @@ function changeColor(e) {
 
 function eraseGrid() {
     color = 'white';
-    defaultDrawing = true; // Enable default drawing after erasing
+    defaultDrawing = true; 
     rainbowModeOn = false;
     shadingOn = false;
-    let squares = document.querySelector('.square');
-      square.style.backgroundColor = 'white';
-      square.style.opacity = 1;
+    let square = document.querySelector('.square');
+    square.style.backgroundColor = 'white';
+    square.style.opacity = 1;
+    let eraseBtn = document.querySelector('#eraseBtn');
+    eraseBtn.classList.toggle('activeBtn');
 }
 
   
@@ -39,18 +41,21 @@ function toggleOutline(e) {
 
 function rainbowMode() {
   rainbowModeOn = !rainbowModeOn;
-  defaultDrawing = false; // Disable default drawing when rainbow mode is active
+  defaultDrawing = false; 
   if(!rainbowModeOn) {
     color = 'black';
   }
+  let rainbowBtn = document.querySelector('#rainbowBtn');
+    rainbowBtn.classList.toggle('activeBtn');
 }
 
-function toggleShading() {
+function toggleShading(e) {
   shadingOn = !shadingOn;
-  defaultDrawing = false; // Disable default drawing when shading mode is active
+  defaultDrawing = false; 
     if (!shadingOn) {
-        defaultDrawing = true; // Enable default drawing when shading mode is disabled
+        defaultDrawing = true; 
     }
+    e.target.classList.toggle('activeBtn');
 }
 
 function handleMouseover(e) {
@@ -64,7 +69,7 @@ function handleMouseover(e) {
     } else if (opacity < 1) {
       e.target.style.opacity = parseFloat(opacity) + 0.3;
     }
-  } else if (defaultDrawing) { // Check if default drawing mode is active
+  } else if (defaultDrawing) { 
     draw(e);
   }
 }
@@ -101,7 +106,8 @@ function clearGrid() {
   squares.forEach((div) => (div.style.opacity = 1));
   rainbowModeOn = false;
   shadingOn = false;
-  defaultDrawing = true; // Enable default drawing after clearing the grid
+  defaultDrawing = true;
+  squares.forEach((div) =>div.classList.add('outline'));
 }
 
 let slider = document.querySelector('#slider');
@@ -117,11 +123,3 @@ sketchBoard.addEventListener('mouseup', () => isDrawing = false);
 sketchBoard.addEventListener('touchstart', () => isDrawing = true);
 sketchBoard.addEventListener('touchend', () => isDrawing = false);
 
-let rainbowBtn = document.querySelector('#rainbowBtn');
-rainbowBtn.addEventListener('click', rainbowMode);
-
-let shadingBtn = document.querySelector('#toggleShading');
-shadingBtn.addEventListener('click', toggleShading);
-
-let resetBtn = document.querySelector('#eraseBtn');
-resetBtn.addEventListener('click', clearGrid);
