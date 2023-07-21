@@ -252,7 +252,22 @@ nav{
 }
 
 
+.toggleButton.activeBtn{
+    background-color: rgba(240, 248, 255, 0.8);
+    color: #0088a9;
+}
+
 .eraseButton.activeBtn{
+    background-color: rgba(240, 248, 255, 0.8);
+    color: #0088a9;
+}
+
+.rainbowButton.activeBtn{
+    background-color: rgba(240, 248, 255, 0.8);
+    color: #0088a9;
+}
+
+.toggleShading.activeBtn{
     background-color: rgba(240, 248, 255, 0.8);
     color: #0088a9;
 }
@@ -289,3 +304,12 @@ nav{
     color: #0088a9;
   }
   
+.footer{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color:rgba(240, 248, 255, 0.8)
+}
