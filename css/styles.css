@@ -121,7 +121,6 @@ nav{
     margin-right: auto;
     justify-content: center;
     align-content: center;
-    border: 1px solid red;
     display: grid;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
     border-collapse: collapse;
@@ -182,3 +181,25 @@ nav{
     background-color: rgba(240, 248, 255, 0.8);
     color: #0088a9;
 }
+
+.colorBox{
+    padding: 10px;
+    margin: 10px;
+}
+
+.eraseButton{
+    margin: 1px auto;
+    padding: 10px 20px;
+    background-color: rgba(240, 248, 255, 0);
+    border: 1px solid #ecf0f1;
+    border-radius: 50px;
+    cursor: pointer;
+    color: #ecf0f1;
+    transition: all 0.3s ease 0s;    
+}
+
+.eraseButton:hover{
+    background-color: rgba(240, 248, 255, 0.8);
+    color: #0088a9;
+}
+

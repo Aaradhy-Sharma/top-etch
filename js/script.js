@@ -4,6 +4,16 @@ function draw(e) {
     e.target.style.backgroundColor = color;
 }
 
+function changeColor(e) {
+    color = e.target.value;
+}
+
+
+function eraseGrid(e){
+    color = 'white';
+}
+
+
 function createGrid(sizeVar) {
     let sketchBoard = document.querySelector('#sketch-board');
     let squares = sketchBoard.querySelectorAll('div');
@@ -22,6 +32,12 @@ function createGrid(sizeVar) {
 }
 
 createGrid(16);
+
+let eraseBtn = document.querySelector('#eraseBtn');
+eraseBtn.addEventListener('click', eraseGrid);
+
+let colorPicker = document.querySelector('#color-picker');
+colorPicker.addEventListener('input', changeColor);
 
 function clearGrid(){
     let sketchBoard = document.querySelector('#sketch-board');
