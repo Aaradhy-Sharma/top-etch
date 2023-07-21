@@ -252,3 +252,40 @@ nav{
 }
 
 
+.eraseButton.activeBtn{
+    background-color: rgba(240, 248, 255, 0.8);
+    color: #0088a9;
+}
+
+/* .eraseButton:focus{
+        background-color: rgba(240, 248, 255, 0.8);
+        color: #0088a9;
+} */
+
+.buttonTab {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ 
+
+ 
+  }
+
+  
+.buttonTab button {
+    margin: 0 5px;
+    padding: 5px 19px;
+    background-color: rgba(240, 248, 255, 0);
+    border: 1px solid #ecf0f1;
+    border-radius: 50px;
+    cursor: pointer;
+    color: #ecf0f1;
+    transition: all 0.3s ease 0s;
+  }
+  
+  .buttonTab button:hover {
+    background-color: rgba(240, 248, 255, 0.8);
+    color: #0088a9;
+  }
+  
